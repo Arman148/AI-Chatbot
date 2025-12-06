@@ -1,0 +1,46 @@
+.home-page-container {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  will-change: transform;
+}
+
+.page-exit {
+  animation: slideUp 1s forwards cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.page-enter {
+  animation: slideDown 1s forwards cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.page-hidden {
+  display: none;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.auth-header-btn {
+  position: absolute;
+  top: 32px;
+  right: 40px;
+  z-index: 1000;
+}
