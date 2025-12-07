@@ -3,17 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-scripts": "5.0.1"
-=======
     "@auth0/auth0-react": "^2.9.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-scripts": "5.0.1",
     "uuid": "^13.0.0"
->>>>>>> 36ed3f57 (chore: update .gitignore and initial commit)
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,10 +33,7 @@
   "devDependencies": {
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
-<<<<<<< HEAD
-=======
     "@types/uuid": "^10.0.0",
->>>>>>> 36ed3f57 (chore: update .gitignore and initial commit)
-    "typescript": "^5.9.3"
+    "typescript": "^4.9.5"
   }
 }

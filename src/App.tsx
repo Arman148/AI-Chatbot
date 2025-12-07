@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-
-function App() {
-  return <div style={{ textAlign: "center" }}>Hello world</div>;
-}
-=======
 import React, { useState, useEffect } from "react";
 import HomePage from "./pages/home/HomePage";
 import ChatPage from "./pages/chat/ChatPage";
@@ -55,6 +48,5 @@ const App: React.FC = () => {
     </div>
   );
 };
->>>>>>> 36ed3f57 (chore: update .gitignore and initial commit)
 
 export default App;
