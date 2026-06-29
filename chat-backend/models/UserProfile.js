@@ -1,44 +1,42 @@
 const mongoose = require("mongoose");
 
-const conceptSchema = new mongoose.Schema(
-  {
-    mastery: { type: Number, min: 0, max: 1, default: 0 },
-  },
-  { _id: false }
-);
+const ConceptSchema = new mongoose.Schema({
+  mastery: { type: Number, min: 0, max: 1, default: 0 },
+});
 
-const topicProgressSchema = new mongoose.Schema(
-  {
-    status: {
-      type: String,
-      enum: ["not_started", "in_progress", "mastered"],
-      default: "not_started",
-    },
-    mastery: { type: Number, min: 0, max: 1, default: 0 },
-    concepts: { type: Map, of: conceptSchema, default: {} },
-    formulasKnown: { type: [String], default: [] },
-    examplesSolved: {
-      type: [
-        {
-          id: String,
-          difficulty: String,
-          success: Boolean,
-        },
-      ],
-      default: [],
-    },
-    lastUpdated: { type: Date, default: Date.now },
+const TopicProgressSchema = new mongoose.Schema({
+  status: {
+    type: String,
+    enum: ["notstarted", "inprogress", "mastered"],
+    default: "notstarted",
   },
-  { _id: false }
-);
+  mastery: { type: Number, min: 0, max: 1, default: 0 },
+  concepts: {
+    type: Map,
+    of: ConceptSchema,
+    default: {},
+  },
+  formulasKnown: { type: [String], default: [] },
+  examplesSolved: {
+    type: [
+      {
+        id: String,
+        difficulty: String,
+        success: Boolean,
+      },
+    ],
+    default: [],
+  },
+  lastUpdated: { type: Date, default: Date.now },
+});
 
-const userProfileSchema = new mongoose.Schema({
+const UserProfileSchema = new mongoose.Schema({
   userId: { type: String, required: true, unique: true },
   topics: {
     type: Map,
-    of: topicProgressSchema,
+    of: TopicProgressSchema,
     default: {},
   },
 });
 
-module.exports = mongoose.model("UserProfile", userProfileSchema);
+module.exports = mongoose.model("UserProfile", UserProfileSchema);

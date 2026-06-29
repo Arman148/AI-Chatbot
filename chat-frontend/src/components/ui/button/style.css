@@ -1,0 +1,261 @@
+.app-button {
+  font-family: DM Sans;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.93);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.28s ease,
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    opacity 0.28s ease,
+    color 0.28s ease;
+  font-weight: 800;
+  outline: none;
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+.btn-primary {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+}
+
+/* =========================================================
+   DEFAULT GLASS BUTTON
+========================================================= */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.082);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 1.25rem;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.btn-glass:active {
+  transform: translateY(0px);
+}
+
+/* =========================================================
+   AUTH GLASS BUTTON
+========================================================= */
+.btn-auth-glass {
+  min-width: 120px;
+  min-height: 44px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  border: 0px solid rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.btn-auth-glass:hover {
+  background: rgba(96, 102, 122, 0.082);
+  border-color: rgba(255, 255, 255, 0.52);
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-auth-glass:active {
+  transform: translateY(0);
+}
+
+.btn-auth-glass:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.92);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   SIDEBAR TOPIC BUTTON
+   - Text-like button
+   - Has arrow on the right
+   - Used for main topic rows
+========================================================= */
+.btn-sidebar-topic {
+  width: 100%;
+  justify-content: flex-start;
+  position: relative;
+  padding: 0.2rem 1.8rem 0.2rem 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: left;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.btn-sidebar-topic::after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-52%);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.86);
+  transition:
+    transform 0.22s ease,
+    color 0.22s ease,
+    opacity 0.22s ease;
+}
+
+.btn-sidebar-topic:hover {
+  background: transparent;
+  color: #ffffff;
+  transform: none;
+}
+
+.btn-sidebar-topic:hover::after {
+  /*transform: translateY(-52%) translateX(2px);*/
+  color: #ffffff;
+}
+
+.btn-sidebar-topic:active {
+  transform: none;
+}
+
+.btn-sidebar-topic:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.82);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Optional state when topic is expanded/active */
+.btn-sidebar-topic.is-open::after,
+.btn-sidebar-topic.is-active::after {
+  content: "⌄";
+  transform: translateY(-54%);
+  font-size: 1.3rem;
+}
+
+/* =========================================================
+   SIDEBAR SUBTOPIC BUTTON
+   - Plain text row
+   - No arrow
+   - Slight indent
+========================================================= */
+.btn-sidebar-subtopic {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0.15rem 0 0.15rem 1.9rem;
+  border-radius: 12px !important;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 78, 83, 0.432),
+    rgba(140, 237, 250, 0.432)
+  ) !important;
+  border-color: rgba(0, 96, 121, 0.95) !important;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: left;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.btn-sidebar-subtopic:hover {
+  background: transparent;
+  color: #ffffff;
+  transform: none;
+}
+
+.btn-sidebar-subtopic:active {
+  transform: none;
+}
+
+.btn-sidebar-subtopic:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.78);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.btn-sidebar-subtopic.is-active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.app-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .btn-sidebar-topic {
+    font-size: 1.45rem;
+  }
+
+  .btn-sidebar-subtopic {
+    font-size: 1.08rem;
+    padding-left: 1.4rem;
+  }
+}
+
+.btn-test-button {
+  width: 100%;
+  justify-content: flex-start !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 0.95rem !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0) !important;
+  border: 1px solid transparent !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-test-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  /*transform: translateX(4px) !important;*/
+}
+
+/* Active State for MAIN topics */
+.btn-test-button-active {
+  width: 100%;
+  justify-content: flex-start !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 0.95rem !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0) !important;
+  border: 1px solid transparent !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 78, 83, 0.432),
+    rgba(204, 126, 211, 0.479)
+  ) !important;
+  border-color: rgba(0, 96, 121, 0.95) !important;
+  box-shadow: 0 0 18px rgba(78, 195, 211, 0.404) !important;
+}

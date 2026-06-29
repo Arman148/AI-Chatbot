@@ -8,7 +8,6 @@ const messageSchema = new mongoose.Schema({
   timestamp: { type: Date, default: Date.now },
 });
 
-//  build an index ordered by userId, topicId, and timestamp for efficient querying
 messageSchema.index({ userId: 1, topicId: 1, timestamp: 1 });
 
 module.exports = mongoose.model("Message", messageSchema);

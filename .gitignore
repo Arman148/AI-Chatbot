@@ -33,3 +33,12 @@ Thumbs.db
 
 # Misc
 *.log
+
+# Python (math-engine)
+venv/
+math-engine/venv/
+__pycache__/
+*.pyc
+*.pyo
+math-engine/__pycache__/
+math-engine/app/__pycache__/

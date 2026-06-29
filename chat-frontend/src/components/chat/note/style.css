@@ -1,0 +1,204 @@
+/* Math note overlay — floating glass card inside chat window */
+
+.math-note-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* allow clicks through except on the card */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* leave a small gap above the chat input */
+  padding: 0 32px 88px;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.math-note-card {
+  pointer-events: auto;
+  width: 420px;
+  max-width: 95vw;
+  height: 350px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(148, 163, 184, 1);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px 14px;
+  box-sizing: border-box;
+}
+
+/* Header */
+
+.math-note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 6px;
+}
+
+.math-note-title {
+  color: #e5e7eb;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.math-note-close-btn {
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  font-size: 0.8rem !important;
+}
+
+/* Preview */
+
+.math-note-preview {
+  min-height: 40px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.math-note-preview-placeholder {
+  color: rgba(148, 163, 184, 0.9);
+  font-size: 0.85rem;
+}
+
+.math-note-preview-text {
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+/* Editor area */
+
+.math-note-editor {
+  flex: 1;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 8px 8px 10px; /* extra bottom padding */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.math-note-editor-field-wrapper {
+  flex: 0 0 auto;
+  min-height: 52px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 1);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 6px 8px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+/* MathQuill field */
+
+.math-note-mathfield {
+  width: 100%;
+  min-height: 32px;
+  color: #e5e7eb;
+  font-size: 1.1rem;
+}
+
+/* MathQuill internal styling for better contrast inside the note */
+
+.math-note-editor-field-wrapper .mq-editable-field {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.math-note-editor-field-wrapper .mq-root-block {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+}
+
+.math-note-editor-field-wrapper .mq-cursor {
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: #f9fafb !important;
+}
+
+/* Symbol palette */
+
+.math-note-palette {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  margin-bottom: 6px; /* more space above bottom */
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 1);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.math-note-palette-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-family: "Nunito", sans-serif;
+  color: #e5e7eb;
+  background: rgba(148, 163, 184, 0.28);
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.math-note-palette-btn:hover {
+  background: rgba(148, 163, 184, 0.45);
+  transform: translateY(-1px);
+}
+
+.math-note-palette-btn:active {
+  transform: translateY(0);
+}
+
+/* Symbols toggle button */
+
+.math-note-dictionary-btn {
+  align-self: flex-end;
+  margin-top: 0; /* sit a bit closer to palette */
+  font-size: 0.85rem !important;
+  padding: 0 12px !important;
+  height: 30px !important;
+  border-radius: 999px !important;
+}
+
+/* Mobile: full-width card, still above bottom UI */
+
+@media (max-width: 768px) {
+  .math-note-overlay {
+    padding: 0 12px 100px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .math-note-card {
+    width: 100%;
+    height: 350px;
+  }
+}
